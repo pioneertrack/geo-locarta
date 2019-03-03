@@ -1,0 +1,14 @@
+ ogr2ogr -update -append -f PostgreSQL "PG:host=localhost port=5432 dbname=postgis_scdb" -nln nsw_test -t_srs EPSG:3857 bmrk_test_points.shp
+ ogr2ogr -update -append -f PostgreSQL "PG:host=localhost port=5432 dbname=postgis_scdb" -nln australian_states australian_states.shp
+
+ogr2ogr -update -append -f  "sqlite" NSW_scdb.sqlite  -nln ogrgeojson -t_srs EPSG:3857 ./bmrk_test_points.shp
+
+ ogr2ogr -update -append -f PostgreSQL "PG:host=localhost port=5432  user=scdbuser  password=scdbuser1234 dbname=postgis_scdb" -nln nsw20180310062806 bmrk_test_points.shp
+
+ ogr2ogr -update -append -f  "Geojson"  bmrk_test_points.shp
+
+
+
+ogr2ogr -update -append -f PostgreSQL "PG:host=localhost port=5432  user=scdbuser  password=scdbuser1234 dbname=postgis_scdb" -nln australian_states australian_states.shp
+
+ogr2ogr -update -append -f PostgreSQL "PG:host=localhost port=5432  user=scdbuser  password=scdbuser1234 dbname=postgis_scdb" -nln nsw_test -t_srs EPSG:3857 bmrk_test.sqlite

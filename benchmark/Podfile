@@ -1,0 +1,13 @@
+target 'BenchMark' do
+    pod 'Mapbox-iOS-SDK'
+    pod 'LCTabBarController'
+    pod 'FMDB'
+    pod 'SDWebImage'
+    pod 'MBProgressHUD'
+    pod 'Colours'
+    pod 'IQKeyboardManager'
+    pod 'UICKeyChainStore'
+    pod 'XMNetworking'
+    pod 'Realm'
+    end
+

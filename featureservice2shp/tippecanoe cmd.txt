@@ -1,0 +1,18 @@
+tippecanoe -z14  -o qld_14_y.mbtiles -ap -as -y COVER_TYP,PARCEL_TYP  -r -B -ad  -s EPSG:3857  -f qld.geojson 
+tippecanoe -z16  -o nsw_16_x.mbtiles -ap -as -X  -r -B -ad  -s EPSG:3857  -f nsw.geojson 
+tippecanoe -z14  -o nsw_14_x.mbtiles -ap -as -X  -r -B -ad  -s EPSG:3857  -f nsw.geojson 
+ogr2ogr -f "geojson" -s_srs EPSG:28355  -t_srs EPSG:3857 act_3857.geojson act.geojson
+tippecanoe -z16  -o act_16_x.mbtiles -ap -as -X  -r -B -ad  -s EPSG:3857  -f act.geojson 
+tippecanoe -z16  -o sa_16_x.mbtiles -ap -as -X  -r -B -ad  -s EPSG:3857  -f sa.geojson 
+tippecanoe -z16  -o tas_16_x.mbtiles -ap -as -X  -r -B -ad  -s EPSG:3857  -f tas.geojson 
+tippecanoe -z16  -o nt_16_x.mbtiles -ap -as -X  -r -B -ad  -s EPSG:3857  -f nt.geojson 
+
+tippecanoe -z16  -o vic_16_x.mbtiles -ap -as -X  -r -B -ad  -s EPSG:4326  -f vic.geojson 
+tippecanoe -z16  -o wa_16_x.mbtiles -ap -as -X  -r -B -ad  -s EPSG:3857  -f wa.geojson 
+
+ogr2ogr -f "geojson"   -t_srs EPSG:3857 vic_3857.geojson vic.geojson
+
+ogr2ogr -f "sqlite"   -t_srs EPSG:3857 vic_3857.sqlite vic.geojson
+
+
+https://www.arcgis.com/sharing/rest/oauth2/social/authorize?client_id=arcgisonline&response_type=token&createNewSocialUser=true&autoAccountCreateForSocial=true&redirect_uri=https://survey.arcgis.com/home/postsignin.html&locale=en-us&socialLoginProviderName=facebook

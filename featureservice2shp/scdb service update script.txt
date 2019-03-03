@@ -1,0 +1,22 @@
+\copy legal from /Users/gis/Documents/project/featureservice2shp/legal_wa.csv With CSV DELIMITER ','
+\copy nt_dcdb_update  from /Users/gis/Documents/project/featureservice2shp/legal_nt_dcdb.csv With CSV DELIMITER ';'
+
+--select * from "public".address_principals_plot where state = 'SA' and plan='D3310';
+--select * from legal;
+--CREATE TABLE address_principal_plot ( like address_principals including all);
+--create  TABLE address_principals_plot AS (select * from "public".address_principals)
+--ALTER TABLE address_principals_plot ADD COLUMN plot varchar(50);
+--ALTER TABLE address_principals_plot ADD COLUMN plan varchar(50);
+--UPDATE address_principals_plot SET (plot,plan)=('346','H105300')  where gid=2642954;
+--select legal_parcel_id from "public".address_principals_plot where gid=2925919;
+--UPDATE "public".address_principals_plot AS ad set plot = b.lot ,plan =b.plan from legal as b where ad.gid=b.gid
+--select parcel,survey_plan_number from nt_dcdb
+--select section_number,block_number,district_name,division_name from act_dcdb
+--SELECT * ,ST_AsGeoJSON(wkb_geometry) as geom FROM act_dcdb WHERE section_number=507 and  block_number=17 and district_name='TUGGERANONG' and district_name='KAMBAH'
+--ALTER TABLE nt_dcdb ADD COLUMN survey_plan_number_nospace varchar(50);
+--SELECT  survey_plan_number from nt_dcdb where ogc_fid=59428
+--create table nt_dcdb_update(ogc_id int8,number varchar(60));
+--delete from nt_dcdb_update
+--update nt_dcdb as nt set survey_plan_number_nospace = b.number from nt_dcdb_update as b where nt.ogc_fid=b.ogc_id
+
+ ssh -i "Benchmrk.pem" ubuntu@ec2-52-62-93-22.ap-southeast-2.compute.amazonaws.com

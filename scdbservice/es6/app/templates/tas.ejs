@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style type="text/css">
+    @font-face {
+      font-family: 'sf-light';
+      src: url('assets/fonts/sf-light/SFUIText-Light.eot');
+      src: url('assets/fonts/sf-light/SFUIText-Light.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/sf-light/SFUIText-Light.woff2') format('woff2'),
+      url('assets/fonts/sf-light/SFUIText-Light.woff') format('woff'),
+      url('assets/fonts/sf-light/SFUIText-Light.ttf')  format('truetype'),
+      url('assets/fonts/sf-light/SFUIText-Light.svg#svgSFUIText-Light') format('svg');
+    }
+    @font-face {
+      font-family: 'sf-regular';
+      src: url('assets/fonts/sf-regular/SFUIText-Regular.eot');
+      src: url('assets/fonts/sf-regular/SFUIText-Regular.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/sf-regular/SFUIText-Regular.woff2') format('woff2'),
+      url('assets/fonts/sf-regular/SFUIText-Regular.woff') format('woff'),
+      url('assets/fonts/sf-regular/SFUIText-Regular.ttf')  format('truetype'),
+      url('assets/fonts/sf-regular/SFUIText-Regular.svg#svgSFUIText-Regular') format('svg');
+    }
+    @font-face {
+      font-family: 'sf-medium';
+      src: url('assets/fonts/sf-medium/SFUIText-Medium.eot');
+      src: url('assets/fonts/sf-medium/SFUIText-Medium.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/sf-medium/SFUIText-Medium.woff2') format('woff2'),
+      url('assets/fonts/sf-medium/SFUIText-Medium.woff') format('woff'),
+      url('assets/fonts/sf-medium/SFUIText-Medium.ttf')  format('truetype'),
+      url('assets/fonts/sf-medium/SFUIText-Medium.svg#svgSFUIText-Medium') format('svg');
+    }
+    @font-face {
+      font-family: 'sf-bold';
+      src: url('assets/fonts/sf-bold/SFUIText-Bold.eot');
+      src: url('assets/fonts/sf-bold/SFUIText-Bold.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/sf-bold/SFUIText-Bold.woff2') format('woff2'),
+      url('assets/fonts/sf-bold/SFUIText-Bold.woff') format('woff'),
+      url('assets/fonts/sf-bold/SFUIText-Bold.ttf')  format('truetype'),
+      url('assets/fonts/sf-bold/SFUIText-Bold.svg#svgSFUIText-Bold') format('svg');
+    }
+    @font-face {
+      font-family: 'sf-heavy';
+      src: url('assets/fonts/sf-heavy/SFUIText-Heavy.eot');
+      src: url('assets/fonts/sf-heavy/SFUIText-Heavy.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/sf-heavy/SFUIText-Heavy.woff2') format('woff2'),
+      url('assets/fonts/sf-heavy/SFUIText-Heavy.woff') format('woff'),
+      url('assets/fonts/sf-heavy/SFUIText-Heavy.ttf')  format('truetype'),
+      url('assets/fonts/sf-heavy/SFUIText-Heavy.svg#svgSFUIText-Heavy') format('svg');
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      height: 100%;
+      text-align: center;
+      background-color: #ffffff;
+      transform: scale(0.49); 
+    -webkit-transform: scale(0.49);
+    -webkit-transform-origin:top left;
+    }
+    .wrapp {
+      position: relative;
+      width: 1240px;
+      height: 1754px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 120px;
+      padding-right: 120px;
+      padding-top: 85px;
+      padding-bottom: 85px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+
+    .header {
+      top: 30px;
+      height: 60px;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+    }
+
+    .footer {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      color: rgba(0,0,0,0.6);
+      width: 1000px;
+      position: absolute;
+      bottom: 85px;
+      left: 120px;
+      font-size: 13px;
+      line-height: 12px;
+      font-family: sf-light, sans-serif;
+      font-weight: 300;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+    }
+    .footer-text {
+      text-align: left;
+      line-height: 12px;
+      font-size: 13px;
+      letter-spacing: -0.43px;
+    }
+
+    .div-padding {
+      padding-left: 5px;
+      text-align: left;
+    }
+
+    .logo {
+      height: 35px;
+      width: 39px;
+      padding-top: 10px;
+    }
+
+    .title {
+      /* font-family: SF Pro Text; */
+      line-height: 19px;
+      font-size: 18px;
+      letter-spacing: -0.41px;
+      text-align: left;
+      color: #000000;
+      mix-blend-mode: normal;
+      padding-top: 5px;
+
+      font-family: sf-bold, sans-serif;
+      font-weight: 700;
+    }
+
+    .bigTitle {
+      font-family: sf-heavy, sans-serif;
+      font-weight: 900;
+      line-height: 28px;
+      font-size: 24px;
+      letter-spacing: -0.41px;
+      color: #000000;
+      height: 30px;
+      padding-top: 9px;
+      mix-blend-mode: normal;
+      text-align: left;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      -ms-align-items: flex-start;
+      align-items: flex-start;
+    }
+
+    .bigTitle-img {
+      margin-right: 5px;
+      position: relative;
+      left: -5px;
+      top: -2px;
+    }
+
+
+    .subtitle {
+      font-family: sf-regular, sans-serif;
+      line-height: 15px;
+      font-size: 16px;
+      letter-spacing: -0.41px;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.6);
+      mix-blend-mode: normal;
+      padding-top: 5px;
+
+    }
+
+    .div-right {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      text-align: right;
+    }
+
+    .div-left {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      text-align: left;
+    }
+
+    .time {
+      font-family: sf-regular, sans-serif;
+      line-height: 15px;
+      font-size: 16px;
+      text-align: right;
+      letter-spacing: -0.41px;
+      color: rgba(0, 0, 0, 0.6);
+      mix-blend-mode: normal;
+      padding-top: 29px;
+    }
+
+    .img-capture {
+      font-family: sf-light, sans-serif;
+      font-weight: 300;
+      line-height: 12px;
+      font-size: 11px;
+      letter-spacing: -0.41px;
+      height: 10px;
+      color: #B4B4B4;
+    }
+
+    .map-content {
+      color: #000000;
+      top: 30px;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding-top: 15px;
+    }
+
+    .map {
+      width: 470px;
+      height: 100%;
+    }
+
+    .mapImg {
+      display: block;
+      width: 470px;
+      height: 360px;
+    }
+    .imgs-table {
+      padding-top: 9px;
+    }
+    .info-table {
+      padding-top: 53px;
+    }
+    .street_view {
+      width: 65px; height: 65px;
+      position: absolute;
+      left: 50%;
+      margin-left: -48px;
+      top: 50%;
+      margin-top: -12px;
+      background-image: url('assets/img/street_view.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .sa_psm {
+      width: 45px; height: 45px;
+      position: absolute;
+      left: 50%;
+      margin-left: -14px;
+      top: 50%;
+      margin-top: -7px;
+      background-image: url('assets/img/sa_psm.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .photo {
+      height: 325px;
+    }
+
+    .table-size {
+      width: 100%;
+
+    }
+
+    .td-content-text {
+      font-family: sf-medium, sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: -0.41px;
+      color: #000000;
+      mix-blend-mode: normal;
+    }
+
+    .td-content-title {
+      font-family: sf-light, sans-serif;
+      font-weight: 300;
+      line-height: 12px;
+      font-size: 13px;
+      padding-left: 11px;
+      letter-spacing: -0.41px;
+      color: rgba(0, 0, 0, 0.8);
+      mix-blend-mode: normal;
+      white-space: nowrap;
+    }
+
+    .td-background {
+      background: rgba(159, 183, 200, 0.17);
+    }
+
+
+    .horizontal-title {
+      font-family: sf-bold, sans-serif;
+      font-weight: bold;
+      line-height: 17px;
+      font-size: 18px;
+      letter-spacing: -0.41px;
+      color: #000000;
+      mix-blend-mode: normal;
+      margin-bottom: 10px;
+    }
+
+    td {
+      line-height: 17px;
+      border-bottom: 1px solid #D9D9D9;
+      height: 40px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-top: 8px;
+      padding-bottom: 6px;
+    }
+
+    tr {
+      width: 100%;
+    }
+
+    .td-right {
+      text-align: right;
+      padding-right: 10px;
+    }
+    .td-date {
+      font-weight: 300;
+      color: #999;
+      font-family: sf-light, sans-serif;
+      margin-left: 25px;
+    }
+    .td-right4 {
+      text-align: right;
+      padding-right: 4px;
+    }
+    .td-spacer {
+      border-bottom: none;
+      padding: 0;
+      width: 25px;
+    }
+
+    .mapImgOver {
+      top: 25px;
+      left: 25px;
+      width: 30px;
+      height: 30px;
+      -webkit-transform: rotate(<%= %>);
+      -ms-transform: rotate(<%= %>);
+      transform: rotate(<%= %>);
+      position: absolute;
+      top: 115px;
+      left: 115px;
+      z-index: 3;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .td-padding-right {
+      padding-right: 80px;
+    }
+
+    .title-padding {
+      padding-left: 23px;
+    }
+    .logo-padding {}
+      .red-text {
+        color: #FF5468;
+      }
+      .position-relative {
+        position: relative;
+      }
+      .text-block_after-table {
+        text-align: left;
+        padding-top: 21px;
+      }
+      .text-block_in-content {
+        text-align: left;
+        margin-bottom: 25px;
+      }
+      .text-block_in-content:last-child {
+        margin-bottom: 0;
+      }
+      .text-area {
+        padding-top: 54px;
+      }
+      .text-block_title {
+        font-family: sf-light, sans-serif;
+        line-height: 12px;
+        font-size: 13px;
+        letter-spacing: -0.41px;
+      }
+      .text-block_text {
+        font-family: sf-light, sans-serif;
+        line-height: 17px;
+        font-size: 13px;
+        letter-spacing: -0.34px;
+        color: #424242;
+        font-style: italic;
+        margin-top: 3px;
+        margin-bottom: 0;
+      }
+      .w105 {width: 105px;}
+    </style>
+  </head>
+
+<body>
+  <div class="wrapp">
+    <div class="content">
+        <div class="header">
+            <div class="logo-padding">
+                <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAjCAYAAAAXMhMjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgB7ZhLctpAEIa7R1DlXcgJ4AjODeIbULG9Dl6kjCuL2CewfAKTlalkAXubwA3AN/AROAK7kGCp09MaPUYIIQEmXrirXJJ6Wj0fM9P/jIyQYXTabgFBD/ZlPpzhr24/7Vbwiu0NblOrZLu9JwDnBvZlju7vzV6hUfOyRs12I7gPrtva1gWhQeik/RFHnRlUsS5Oxz/cBeBWcHq0wAEXH7qTwOF90Bcc/Bix/1ra/xccVOZD8MCNHU49uvXgRtq3sI3h6OTili+POOpOE97D8M74H+nk/BY2tI3geI1dA1KTp9O1GhAa1vPzvAOETYnfBxydnn/jiws+Xi032nA46s8Y+EzH0/HFZ3hJODr9csgj0eEO+zi4G1ltoYx8+lq3AHWxII34ry/vvwScdO47QwabwgKWt7aqCirT+ft+qW3xh0ePZkCVcRmJKQQnCR0Yy5riKrSLIAzyAzhyluRDphcU/yCqQRUKAxYbuQoOBYxHLetQaMH5qaIIAR/uOnyZyLrkfEU0cC0cHbd7kUQs4GhlIGZD2TGeKSLO58zXSkwuXCAZ0Aoe4HvmdMapaiZjY1UE3v980nmCB2itkxiVCwZG/XUReAcu5BlBzcTWc+O8ucuxU/PksphfQhk41qRmBCYJdRHwxp5nCvOhjCW0L+ztVh8cMlOmHVJJ6MdfXlrTVhWB9SKZal2/9sxBYZLwDLMqWC2BackANJXE2pSladl04bQ2CoU/Q6B94bsZEqNiMDn+jO3kuKYIkmxY6ngU5FXxD8+QmHjkqr97FpjWtPTGntubeZcKjhyE2keJjxuWGM2RhJPK5NOD9WaepqWMmq2a/VzmkJk6QMgpJjhmKUsyongugqLTKXZgw6jFOyhoUhyh9sXeS82lBMUGmxYvAmOV1FRmbf55prUvKo6YRJl1dRQJ46qNvYz52CgTHmifmV4UjiPNJWtOhtbTawyvCmnaUvbUyJEq/WGD99yvnt6FgE20rxLTy2h1YBOTE0lCMhWWhhOGQdfaynb0j5z0SNFWn4RRVtiFpbVt3eZf0HYDp9CWDqJy1brC/gHchTcN2wvSjwAAAABJRU5ErkJggg==" />
+            </div>
+
+            <div class="title-padding">
+                <div class="title">Benchmrk</div>
+                <div class="subtitle">
+                    <%= title %>
+                </div>
+            </div>
+            <div class="div-padding div-right">
+                <div class="time">
+                    <%= createtime %>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="map-content">
+            <div class="map">
+                <div>
+                    <img class="mapImg photo" src='<%= url %>' />
+                </div>
+                <div>
+                        <div class="img-capture div-right"><%= img_capture_date %></div>
+                </div>
+                <div>
+                    <div class="bigTitle">
+                      <img class="bigTitle-img" src="assets/img/big-title-img.png">
+                        <%= site_pk_id %>
+                    </div>
+                </div>
+            </div>
+            <div class="map">
+                    <div class="container">
+                            <img class="mapImg" src='<%= mapUrl %>' />
+                            <div class="street_view"></div>
+                            <div class="sa_psm"></div>
+                            <!--
+                    <img class="mapImgOver" src="data:image/png;base64,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" />
+                -->  </div>
+            </div>
+
+        </div><!--/.map-content-->
+        <div class="map-content imgs-table">
+          <div class="map">
+            <div class='div-left'>
+                <table class="table-size " cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="td-content-title">Station Name</td>
+                        <td class="td-right td-content-text "><%= scs_name %></td>
+                    </tr>
+                    <tr>
+                        <td class="td-content-title">Mark Status</td>
+                        <td class="td-right td-content-text ">
+                            <%= markstatus %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-content-title">Target Structure</td>
+                        <td class="td-right td-content-text "><%= target_str %></td>
+                    </tr>
+                </table>
+            </div>
+          </div><!--/.map-->
+
+          <div class="map">
+            <div class='div-left'>
+                <table class="table-size " cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="td-content-title">Address</td>
+                        <td class="td-right td-content-text "><%= address %></td>
+                    </tr>
+                </table>
+                <div class="text-block_after-table">
+                  <span class="text-block_title">Monument Type</span>
+                  <p class="text-block_text">
+                    <%= descript %>
+                  </p>
+                </div>
+            </div>
+          </div><!--/.map-->
+
+        </div><!--/.map-content-->
+        <div class="map-content info-table">
+          <div class="map">
+            <div class='div-left'>
+                <div class="horizontal-title  ">Horizontal</div>
+            </div>
+            <div class='div-left'>
+                <table class="table-size" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="td-content-title td-background w105">Easting</td>
+                        <td class="td-right4 td-content-text td-background w105">
+                            <%= easting %>
+                        </td>
+                        <td class="td-spacer"></td>
+                        <td class="td-spacer"></td>
+                        <td class="td-content-title td-background w105"><span class="red-text">Latitude</span></td>
+                        <td class="td-right4 td-content-text td-background w105">
+                            <span class="red-text"><%= latitude %></<span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-content-title td-background w105">Northing</td>
+                        <td class="td-right4 td-content-text td-background w105">
+                            <%= northing %>
+                        </td>
+                        <td class="td-spacer"></td>
+                        <td class="td-spacer"></td>
+                        <td class="td-content-title td-background w105"><span class="red-text">Longitude</span></td>
+                        <td class="td-right4 td-content-text td-background w105">
+                            <span class="red-text"><%= longitude %></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-content-title td-background w105">Zone</td>
+                        <td class="td-right4 td-background td-content-text w105">
+                            <%= zone %>
+                        </td>
+                        <td class="td-spacer" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="td-content-title">Class</td>
+                        <td colspan="3" class="td-right td-content-text ">
+                            <%= hor_class %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="td-content-title">Order</td>
+                        <td colspan="3" class="td-right td-content-text "><%= hor_order %></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="td-content-title">Datum</td>
+                        <td colspan="3" class="td-right td-content-text ">
+                            <%= hor_datum %>
+                        </td>
+                    </tr>
+
+
+                </table>
+            </div>
+          </div><!--/.map-->
+          <div class="map">
+            <div class='div-left'>
+                <div class="horizontal-title  ">Vertital</div>
+            </div>
+            <div class='div-left'>
+                <table class="table-size" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td colspan="2" class="td-content-title  td-background">Elevation</td>
+                        <td colspan="2" class="td-right td-content-text  td-background">
+                            <%= height %>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td colspan="2" class="td-content-title  ">Class</td>
+                            <td colspan="2" class="td-right td-content-text ">
+                                <%= hgt_class %>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td colspan="2" class="td-content-title">Order</td>
+                        <td colspan="2" class="td-right td-content-text ">
+                                <%= hgt_order %>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="td-content-title">Datum</td>
+                        <td colspan="2" class="td-right td-content-text "><%= hgt_datum %></td>
+                    </tr>
+
+                </table>
+            </div>
+          </div><!--/.map-->
+        </div>
+        <div class="footer">
+            <div class="footer-text">
+                © The State of TAS ({department name}) <%= year %>. The State does not warrant that the copyright
+                information provided to the client by this system is free from error. The stat shall not be liable for
+                any loss, damage or injury suffered by the client or any other person by client's use of the copyright
+                information
+            </div>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>
